@@ -1,0 +1,24 @@
+name: Publish Docker image
+
+on:
+  push:
+    branches:
+      - master
+  release:
+    types: [published]
+
+jobs:
+  push-to-registry:
+    name: Push Docker image to Github Packages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Build and Push to Docker Hub
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: spatialest-ltd/mjml-server/api
+          tag_with_ref: true

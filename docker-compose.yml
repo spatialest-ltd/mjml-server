@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+
+  app:
+    image: node:14-alpine
+    environment:
+      MJML_TOKEN: 44492baf3d320f1c4b9c764df5677c33
+    command: node_modules/.bin/nodemon
+    volumes:
+    - .:/app
+    working_dir: /app
+    user: 1000:1000
+    ports:
+    - 8000:8000
