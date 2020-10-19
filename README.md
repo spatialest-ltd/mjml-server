@@ -16,7 +16,7 @@ This server follows the MIT license, as well as the original MJML project.
 We distribute the server as a docker image for ease of deployment in cloud-like environments.
 
 ```bash
-docker run --name mjml -e MJML_TOKEN=$(openssl rand -hex 16) -p 8000:8000 docker.pkg.github.com/spatialest-ltd/mjml-server/api:latest
+docker run --name mjml -e MJML_TOKEN=$(openssl rand -hex 16) -p 8000:8000 spatialest/mjml-server
 ```
 
 The service exposes a really simple api.

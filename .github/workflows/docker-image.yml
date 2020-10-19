@@ -17,8 +17,7 @@ jobs:
       - name: Build and Push to Docker Hub
         uses: docker/build-push-action@v1
         with:
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          registry: docker.pkg.github.com
-          repository: spatialest-ltd/mjml-server/api
+          username: ${{ screts.DOCKER_HUB_USER }}
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+          repository: spatialest/mjml-server
           tag_with_ref: true
