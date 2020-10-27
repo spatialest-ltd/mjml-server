@@ -41,7 +41,7 @@ Returns the health of the service.
 Parses MJML to HTML.
 
 MJML must come as a blob in the request body. **`Content-Type` header MUST be 
-`application/xml-mjml` for the parsing to work**. Optionally, you must provide the `X-Token`
+`application/xml+mjml` for the parsing to work**. Optionally, you must provide the `X-Token`
 header if your service is protected.
 
 Here is an example request in PHP using streams:
